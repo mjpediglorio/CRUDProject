@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Posts] (Table)
+       [dbo].[User] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Posts] (Default Constraint)
+       [dbo].[spUser_Create] (Procedure)
+       [dbo].[spUser_Delete] (Procedure)
+       [dbo].[spUser_Get] (Procedure)
+       [dbo].[spUser_LoginByEmail] (Procedure)
+
+** Supporting actions

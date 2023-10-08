@@ -1,0 +1,6 @@
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\bin\Debug\BlogDB.dacpac
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\bin\Debug\BlogDB.dll
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\bin\Debug\BlogDB.pdb
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\BlogDB.sqlproj.AssemblyReference.cache
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\BlogDB.dll
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\BlogDB.pdb
