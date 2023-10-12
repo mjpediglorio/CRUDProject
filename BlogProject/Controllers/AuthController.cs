@@ -1,4 +1,5 @@
-﻿using DataAccess.Data;
+﻿using Application.Processes;
+using DataAccess.DbAccess;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,16 +9,16 @@ namespace BlogProject.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IUserData data;
+        private readonly IProcesses data;
 
-        public AuthController(IUserData data)
+        public AuthController(IProcesses data)
         {
             this.data = data;
         }
         [HttpPost("Login")]
         public async Task<AuthDto> Login(UserLoginModel request)
         {
-            var results = await data.UserLogin(request);
+            var results = await data.Login(request);
             return results;
         }
     }

@@ -1,4 +1,4 @@
-﻿using DataAccess.Data;
+﻿using Application.Processes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,8 +8,8 @@ namespace BlogProject.Controllers
     [ApiController]
     public class UserRegisterController : ControllerBase
     {
-        private readonly IUserData data;
-        public UserRegisterController(IUserData data)
+        private readonly IProcesses data;
+        public UserRegisterController(IProcesses data)
         {
             this.data = data;
         }
@@ -18,7 +18,7 @@ namespace BlogProject.Controllers
         public async Task<SignUpDto> Register(UserRegisterModel request)
         {
 
-                var results = await data.RegisterUser(request);
+            var results = await data.Register(request);
             return results;
 
         }

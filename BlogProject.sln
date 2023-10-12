@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BlogDB", "BlogDB\BlogDB.sql
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{EA9799F1-1AB6-4B42-BB20-8EAD2A66D7FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{839A661F-DE05-4FDB-9EB0-F16205CAC56B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{EA9799F1-1AB6-4B42-BB20-8EAD2A66D7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA9799F1-1AB6-4B42-BB20-8EAD2A66D7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA9799F1-1AB6-4B42-BB20-8EAD2A66D7FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{839A661F-DE05-4FDB-9EB0-F16205CAC56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{839A661F-DE05-4FDB-9EB0-F16205CAC56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{839A661F-DE05-4FDB-9EB0-F16205CAC56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{839A661F-DE05-4FDB-9EB0-F16205CAC56B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
