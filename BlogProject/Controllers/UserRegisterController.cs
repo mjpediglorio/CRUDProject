@@ -1,4 +1,5 @@
 ﻿using Application.Processes;
+using Application.UserRegister;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +9,17 @@ namespace BlogProject.Controllers
     [ApiController]
     public class UserRegisterController : ControllerBase
     {
-        private readonly IProcesses data;
-        public UserRegisterController(IProcesses data)
+        private readonly UserRegisterCommand _command;
+        public UserRegisterController(UserRegisterCommand command)
         {
-            this.data = data;
+            _command = command;
         }
 
         [HttpPost("Register")]
-        public async Task<SignUpDto> Register(UserRegisterModel request)
+        public async Task<UserRegisterDto> Register(UserRegisterModel request)
         {
 
-            var results = await data.Register(request);
+            var results = await _command.Register(request);
             return results;
 
         }

@@ -12,19 +12,19 @@ namespace BlogProject.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IProcesses _process;
-        private readonly IUserServices _services;
-        public UserController(IProcesses process, IUserServices services)
-        {
-            _services = services;
-            _process = process;
-        }
-        [HttpGet("Get"), Authorize]
-        public Task<AccountInfoDto> AccountUserInfoGet()
-        {
-            int userId =  int.Parse(_services.GetId());
-            var result = _process.GetUserInfo(userId);
-            return result;
-        }
+        //private readonly IProcesses _process;
+        //private readonly IUserServices _services;
+        //public UserController(IProcesses process, IUserServices services)
+        //{
+        //    _services = services;
+        //    _process = process;
+        //}
+        //[HttpGet("Get"), Authorize]
+        //public Task<AccountInfoDto> AccountUserInfoGet()
+        //{
+        //    int userId =  int.Parse(_services.GetId());
+        //    var result = _process.GetUserInfo(userId);
+        //    return result;
+        //}
     }
 }

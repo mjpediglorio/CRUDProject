@@ -1,4 +1,5 @@
 ﻿using Application.Models;
+using Application.UserRegister;
 using DataAccess.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Application.Processes
     public interface IProcesses
     {
         Task<AuthDto> Login(UserLoginModel request);
-        Task<SignUpDto> Register(UserRegisterModel user);
+        Task<UserRegisterDto> Register(UserRegisterModel user);
 
         Task<AccountInfoDto> GetUserInfo(int userId);
     }

@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using Application.Services.UserServices;
 using Application.DbAccess.DbUser;
+using Application.UserRegister;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddTransient<UserRegisterCommand>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -65,7 +67,6 @@ builder.Services.AddAuthentication(opt =>
         };
     });
 builder.Services.AddSingleton<IDbUser, DbUser>();
-builder.Services.AddSingleton<IProcesses, Processes>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

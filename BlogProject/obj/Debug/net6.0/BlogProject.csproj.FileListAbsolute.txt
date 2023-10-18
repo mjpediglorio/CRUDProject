@@ -58,3 +58,5 @@ C:\Users\admin\Desktop\repos\BlogProject\BlogProject\bin\Debug\net6.0\Swashbuckl
 C:\Users\admin\Desktop\repos\BlogProject\BlogProject\bin\Debug\net6.0\WebActivatorEx.dll
 C:\Users\admin\Desktop\repos\BlogProject\BlogProject\bin\Debug\net6.0\Application.dll
 C:\Users\admin\Desktop\repos\BlogProject\BlogProject\bin\Debug\net6.0\Application.pdb
+C:\Users\admin\Desktop\repos\BlogProject\BlogProject\bin\Debug\net6.0\Domain.dll
+C:\Users\admin\Desktop\repos\BlogProject\BlogProject\bin\Debug\net6.0\Domain.pdb

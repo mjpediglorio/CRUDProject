@@ -1,5 +1,6 @@
 ﻿using DataAccess.Models;
 using DataAccess.Helper;
+using Application.UserRegister;
 
 namespace Application.DbAccess.DbUser
 {

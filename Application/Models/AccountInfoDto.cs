@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Models
 {
-    public class AccountInfoDto : ResultBaseDto
+    public class AccountInfoDto
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

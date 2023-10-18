@@ -4,14 +4,14 @@
     "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Application\\Application.csproj": {
+    "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Application\\Application.csproj",
-        "projectName": "Application",
-        "projectPath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Application\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,44 +39,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.AspNetCore.Http.Abstractions": {
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            },
-            "Microsoft.IdentityModel.Tokens": {
-              "target": "Package",
-              "version": "[6.10.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.5.0, )"
-            },
-            "Swashbuckle.AspNetCore.Filters": {
-              "target": "Package",
-              "version": "[7.0.11, )"
-            },
-            "Swashbuckle.AspNetCore.Swagger": {
-              "target": "Package",
-              "version": "[6.5.0, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.5, )"
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[6.10.0, )"
-            },
-            "System.Security.Claims": {
-              "target": "Package",
-              "version": "[4.3.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -135,8 +97,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Application\\Application.csproj"
+              "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Domain\\Domain.csproj"
               }
             }
           }
@@ -151,9 +113,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

@@ -11,6 +11,7 @@ using DataAccess.Models;
 using System.Xml;
 using DataAccess.Helper;
 using System.Runtime.CompilerServices;
+using Application.UserRegister;
 
 namespace Application.DbAccess.DbUser
 {
