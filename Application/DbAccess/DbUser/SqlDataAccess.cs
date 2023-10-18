@@ -12,13 +12,13 @@ using System.Xml;
 using DataAccess.Helper;
 using System.Runtime.CompilerServices;
 
-namespace DataAccess.DbAccess
+namespace Application.DbAccess.DbUser
 {
-    public class SqlDataAccess : ISqlDataAccess
+    public class DbUser : IDbUser
     {
         private IConfiguration _config;
 
-        public SqlDataAccess(IConfiguration config)
+        public DbUser(IConfiguration config)
         {
             _config = config;
         }
@@ -31,11 +31,13 @@ namespace DataAccess.DbAccess
                 {
                     cmd.Connection = connection;
                     connection.Open();
-                    cmd.CommandText = "INSERT INTO dbo.UserDB (FirstName, MiddleName, LastName, Email, Password)" +
-                    "VALUES (@FirstName, @MiddleName, @LastName, @Email, @Password);";
+                    cmd.CommandText = "INSERT INTO dbo.UsersDB (Username, FirstName, MiddleName, LastName, ContactNumber, Email, Password)" +
+                    "VALUES (@Username, @FirstName, @MiddleName, @LastName, @ContactNumber, @Email, @Password);";
+                    cmd.Parameters.Add(new SqlParameter("@Username", user.Username));
                     cmd.Parameters.Add(new SqlParameter("@FirstName", user.FirstName));
                     cmd.Parameters.Add(new SqlParameter("@MiddleName", user.MiddleName));
                     cmd.Parameters.Add(new SqlParameter("@LastName", user.LastName));
+                    cmd.Parameters.Add(new SqlParameter("@ContactNumber", user.ContactNumber));
                     cmd.Parameters.Add(new SqlParameter("@Email", user.Email));
                     cmd.Parameters.Add(new SqlParameter("@Password", user.Password));
                     int a = cmd.ExecuteNonQuery();
@@ -51,6 +53,10 @@ namespace DataAccess.DbAccess
             };
         }
 
+        public Task<DbAuthUsers> GetInfo(int userId)
+        {
+            throw new NotImplementedException();
+        }
 
         public async Task<DbResultTypes> LoginByEmail(UserLoginModel request)
         {
@@ -112,7 +118,7 @@ namespace DataAccess.DbAccess
                         cmd.CommandText = "SELECT TOP 1 * from UserDB WHERE Email = @Email";
                         cmd.Parameters.Add(new SqlParameter("@Email", email));
 
-                        using (var reader =  cmd.ExecuteReader())
+                        using (var reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {

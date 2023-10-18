@@ -1,4 +1,5 @@
-﻿using DataAccess.Models;
+﻿using Application.Models;
+using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace Application.Processes
     {
         Task<AuthDto> Login(UserLoginModel request);
         Task<SignUpDto> Register(UserRegisterModel user);
+
+        Task<AccountInfoDto> GetUserInfo(int userId);
     }
 }

@@ -1,11 +1,12 @@
 using BlogProject;
-using DataAccess.DbAccess;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Application.Processes;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
+using Application.Services.UserServices;
+using Application.DbAccess.DbUser;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,22 +15,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
-    {
-        Title = "API Auth",
-        Version = "1.0.1",
-        Description = "API Auth"
-    });
+    { Title = "API Auth", Version = "1.0.1", Description = "API Auth" });
+
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Scheme = "Bearer",
         BearerFormat = "JWT",
-        Description = "Bearer Authentication with JWT Token",
         In = ParameterLocation.Header,
         Name = "Authorization",
+        Description = "Bearer Authentication with JWT Token",
         Type = SecuritySchemeType.Http
     });
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -46,27 +45,26 @@ builder.Services.AddSwaggerGen(options =>
             new List<string>()
         }
     });
-    options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
-builder.Services.AddCors(options => options.AddPolicy(name: "NgOrigins",
-    policy =>
-    {
-        policy.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
-    }));
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+builder.Services.AddCors();
+builder.Services.AddAuthentication(opt =>
 {
-    options.TokenValidationParameters = new TokenValidationParameters
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    .AddJwtBearer(options =>
     {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value)),
-        ValidateIssuer = false,
-        ValidateAudience = false
-    };
-});
-
-
-builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8
+                .GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value))
+        };
+    });
+builder.Services.AddSingleton<IDbUser, DbUser>();
 builder.Services.AddSingleton<IProcesses, Processes>();
 var app = builder.Build();
 
@@ -78,8 +76,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors("NgOrigins");
+
 app.UseHttpsRedirection();
+
 app.UseAuthentication();
+
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();

@@ -1,4 +1,5 @@
-﻿using DataAccess.DbAccess;
+﻿using Application.DbAccess.DbUser;
+using Application.Models;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -17,10 +18,9 @@ namespace Application.Processes
     public class Processes : IProcesses
     {
         private IConfiguration _config;
-        private readonly ISqlDataAccess _db;
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IDbUser _db;
 
-        public Processes(ISqlDataAccess db, IConfiguration config)
+        public Processes(IDbUser db, IConfiguration config)
         {
             _db = db;
             _config = config;
@@ -42,10 +42,6 @@ namespace Application.Processes
             };
         }
 
-        public async Task<IAsyncResult> InfoGet()
-        {
-            var res = int.Parse(_httpContextAccessor.HttpContext.User.Identity.Name);
-        }
         public async Task<AuthDto> Login(UserLoginModel request)
         {
             var res = await _db.LoginByEmail(request);
@@ -53,7 +49,6 @@ namespace Application.Processes
             {
                 var tokenString = "";
                 var account_details = await _db.UserDetailsGetByEmail(request.Email);
-                Console.WriteLine(account_details);
                 var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
                 var creds = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256Signature);
                 var tokenOptions = new JwtSecurityToken(
@@ -83,6 +78,30 @@ namespace Application.Processes
                     Message = res.ToString(),
                     ErrorMsg = res.ToString(),
                     Token = null
+                };
+            }
+        }
+
+        public async Task<AccountInfoDto> GetUserInfo(int userId)
+        {
+            AccountInfoDto ret = new AccountInfoDto();
+            var res = await _db.GetInfo(userId);
+            if (res.Result == DbResultTypes.OK)
+            {
+                ret.FirstName = res.FirstName;
+                ret.MiddleName = res.MiddleName;
+                ret.LastName = res.LastName;
+                ret.Email = res.Email;
+                return ret;
+            }
+            else
+            {
+                return new AccountInfoDto
+                {
+                    Code = (int)res.Result,
+                    Message = res.ToString(),
+                    ErrorMsg = res.ToString(),
+
                 };
             }
         }
