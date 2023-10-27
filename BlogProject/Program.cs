@@ -83,9 +83,10 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    
 }
+app.UseSwagger();
+app.UseSwaggerUI();
 Console.WriteLine(Environment.GetEnvironmentVariable("IsTesting"));
 app.UseCors("NgOrigins");
 app.UseHttpsRedirection();
