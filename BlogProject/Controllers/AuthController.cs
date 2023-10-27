@@ -1,5 +1,4 @@
-﻿using Application.Processes;
-using DataAccess.DbAccess;
+﻿using Application.UserSignIn;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,16 +8,16 @@ namespace BlogProject.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IProcesses data;
-
-        public AuthController(IProcesses data)
+        private readonly IUserSignInCommand _command;
+        public AuthController(IUserSignInCommand command)
         {
-            this.data = data;
+            _command = command;
         }
+
         [HttpPost("Login")]
-        public async Task<AuthDto> Login(UserLoginModel request)
+        public async Task<SignInDto> Login(UserSignInModel user)
         {
-            var results = await data.Login(request);
+            var results = await _command.SignInCommand(user);
             return results;
         }
     }

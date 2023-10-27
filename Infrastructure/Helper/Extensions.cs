@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructre.Helper
+namespace Infrastructure.Helper
 {
     public static class Extensions
     {
@@ -61,14 +61,14 @@ namespace Infrastructre.Helper
         public static DateTime UnixToDateTime(this int unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch
-            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddSeconds(unixTimeStamp);
             return dtDateTime;
         }
 
         public static int DateTimeToUnixTime(this DateTime date)
         {
-            Int32 unixTimestamp = (Int32)(date.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+            int unixTimestamp = (int)date.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
             return unixTimestamp;
         }
     }
