@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Db.Result.Common
 {
-    public class DbResult
+    public record DbResult
     {
         [NotMapped]
         public DbResultTypes Result { get; set; }

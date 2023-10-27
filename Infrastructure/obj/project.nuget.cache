@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "l6tIRaq9DgPkjIK+33xPH2D5h6YrbpieRIjLOrHrosaEQIs0EqQGR79iLSAjjAR+5VxtSR307E2vr2fBnyAJEg==",
+  "dgSpecHash": "p4yGly0yDdaCga00qR+R2NK1vaXAvpWksoLsJiHCShBmEdAYCLs5TtkzWR6iwEc+ZF4SrZJdH51PS3R7xsN98g==",
   "success": true,
   "projectFilePath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\awssdk.core\\3.7.204.7\\awssdk.core.3.7.204.7.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\awssdk.simpleemail\\3.7.200.60\\awssdk.simpleemail.3.7.200.60.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

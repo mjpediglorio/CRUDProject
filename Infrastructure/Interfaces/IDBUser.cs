@@ -1,6 +1,4 @@
-﻿
-
-namespace Application.DbAccess.DbUser
+﻿namespace Infrastructure.Interfaces
 {
     public interface IDbUser
     {

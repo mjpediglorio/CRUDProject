@@ -1,4 +1,4 @@
-﻿using Application.Processes;
+﻿using Application.UserSignIn;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,17 +8,17 @@ namespace BlogProject.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        //private readonly IProcesses data;
+        private readonly IUserSignInCommand _command;
+        public AuthController(IUserSignInCommand command)
+        {
+            _command = command;
+        }
 
-        //public AuthController(IProcesses data)
-        //{
-        //    this.data = data;
-        //}
-        //[HttpPost("Login")]
-        //public async Task<AuthDto> Login(UserLoginModel request)
-        //{
-        //    var results = await data.Login(request);
-        //    return results;
-        //}
+        [HttpPost("Login")]
+        public async Task<SignInDto> Login(UserSignInModel user)
+        {
+            var results = await _command.SignInCommand(user);
+            return results;
+        }
     }
 }

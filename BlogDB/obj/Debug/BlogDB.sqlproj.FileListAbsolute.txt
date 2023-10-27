@@ -4,3 +4,7 @@ C:\Users\admin\Desktop\repos\BlogProject\BlogDB\bin\Debug\BlogDB.pdb
 C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\BlogDB.sqlproj.AssemblyReference.cache
 C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\BlogDB.dll
 C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\BlogDB.pdb
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\Model.xml
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\refactor.xml
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\postdeploy.sql
+C:\Users\admin\Desktop\repos\BlogProject\BlogDB\obj\Debug\predeploy.sql

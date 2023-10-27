@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Hd67o11ys0GBtKbSAO3POnmhiJCcgfU9z+uEIP/eKDYx4XM2ktt7B7yqr94Yzx+vWOg8Y5ZneJQabz3e+p2TzQ==",
+  "dgSpecHash": "0QL6R/Sq1zY2QFdEtZI5X9RYH8pwDEZawGg6rN7NlYOU3RLfBtWal+AEqM8bjIO5li8ZNZgiBQA8iES5xw6ifQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\admin\\Desktop\\repos\\BlogProject\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\awssdk.core\\3.7.204.7\\awssdk.core.3.7.204.7.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\awssdk.simpleemail\\3.7.200.60\\awssdk.simpleemail.3.7.200.60.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.23\\microsoft.windowsdesktop.app.ref.6.0.23.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.23\\microsoft.netcore.app.ref.6.0.23.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.23\\microsoft.aspnetcore.app.ref.6.0.23.nupkg.sha512"

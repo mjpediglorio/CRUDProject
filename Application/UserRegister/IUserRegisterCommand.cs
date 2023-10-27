@@ -8,6 +8,6 @@ namespace Application.UserRegister
 {
     public interface IUserRegisterCommand
     {
-        Task<UserRegisterDto> Register(UserRegisterModel request);
+        Task<UserRegisterDto> Register(UserRegisterModel request, string confirmationLink, int code, string hash);
     }
 }

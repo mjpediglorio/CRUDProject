@@ -13,3 +13,5 @@ C:\Users\admin\Desktop\repos\BlogProject\Application\obj\Debug\net6.0\ref\Applic
 C:\Users\admin\Desktop\repos\BlogProject\Application\bin\Debug\net6.0\Domain.dll
 C:\Users\admin\Desktop\repos\BlogProject\Application\bin\Debug\net6.0\Domain.pdb
 C:\Users\admin\Desktop\repos\BlogProject\Application\obj\Debug\net6.0\Application.csproj.CopyComplete
+C:\Users\admin\Desktop\repos\BlogProject\Application\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\admin\Desktop\repos\BlogProject\Application\bin\Debug\net6.0\Infrastructure.pdb
